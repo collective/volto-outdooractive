@@ -1,0 +1,37 @@
+{
+  "name": "volto-outdooractive",
+  "version": "0.1.0",
+  "description": "volto-outdooractive: Volto add-on",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@release-it/conventional-changelog": "^2.0.1",
+    "husky": "^6.0.0",
+    "release-it": "^14.10.1"
+  },
+  "peerDependencies": {
+    "@plone/volto": ">=14.0.0"
+  },
+  "dependencies": {
+    "@plone/scripts": "*",
+    "postscribe": "^2.0.8",
+    "react-postscribe": "^0.1.3"
+  }
+}
