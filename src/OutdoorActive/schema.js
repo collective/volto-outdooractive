@@ -7,19 +7,26 @@ export const OutdoorActiveSchema = ({ intl }) => ({
     {
       id: 'default',
       title: intl.formatMessage(messages.defaultFieldset),
-      fields: ['mode', 'zoom', 'categories'],
+      fields: ['mode', 'categories'],
     },
-    // {
-    //   id: 'style',
-    //   title: intl.formatMessage(messages.styling),
-    //   fields: ['fixed', 'celled', 'striped', 'compact', 'basic', 'inverted'],
-    // },
+    {
+      id: 'map',
+      title: intl.formatMessage(messages.mapFieldset),
+      fields: ['zoom', 'latitude', 'longitude'],
+    },
   ],
 
   properties: {
     // frontendtype: {
     //     type: 'string',
     //     title: intl.formatMessage(messages.frontendtype),
+    // frontendtype:
+    // “tour”, “hut”
+    // “poi”, “hut”, “loging”
+    // “offer”
+    // “skiresort”
+    // “story”
+    // “condition”
     // },
     mode: {
       type: 'string',
@@ -33,20 +40,34 @@ export const OutdoorActiveSchema = ({ intl }) => ({
       title: intl.formatMessage(messages.mode),
     },
     zoom: {
-        type: 'integer',
-        title: intl.formatMessage(messages.zoom),
+      type: 'integer',
+      title: intl.formatMessage(messages.zoom),
+    },
+    latitude: {
+      type: 'integer',
+      title: intl.formatMessage(messages.latitude),
+      // esiste il concweto di default qui  ?
+      default: 44.6502,
+    },
+    longitude: {
+      type: 'integer',
+      title: intl.formatMessage(messages.longitude),
+      default: 10.8867,
     },
     // <category id="8982342" name="Escursionismo" mapOverlays="hiking">
     // <category id="8982347" name="In bici" mapOverlays="cycling">
     // http://www.outdooractive.com/api/project/api-dev-oa/category/tree?key=yourtest-outdoora-ctiveapi
     categories: {
       type: 'array',
+      widget: 'oacategories',
       isMulti: true,
+      // getVocabulary: getCategories,
       // TODO usare un vocabolario server side o poplarlo client side ?
-      choices: [
-        ['8982342', "Escursionismo"],
-        ['8982347', "In bici"],
-      ],
+      // choices: [
+      //   ['8982342', "Escursionismo"],
+      //   ['8982347', "In bici"],
+      // ],
+      // choices: getCategories,
       title: intl.formatMessage(messages.categories),
     },
 
@@ -92,6 +113,14 @@ const messages = defineMessages({
     id: 'zoom',
     defaultMessage: 'Zoom',
   },
+  latitude: {
+    id: 'latitude',
+    defaultMessage: 'Latitude',
+  },
+  longitude: {
+    id: 'longitude',
+    defaultMessage: 'Longitude',
+  },
   categories: {
     id: 'categories',
     defaultMessage: 'Categories',
@@ -120,10 +149,10 @@ const messages = defineMessages({
 //     id: 'Stripe alternate rows with color',
 //     defaultMessage: 'Stripe alternate rows with color',
 //   },
-//   styling: {
-//     id: 'Styling',
-//     defaultMessage: 'Styling',
-//   },
+  mapFieldset: {
+    id: 'Map',
+    defaultMessage: 'Map',
+  },
   defaultFieldset: {
     id: 'Default',
     defaultMessage: 'Default',

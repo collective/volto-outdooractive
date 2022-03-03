@@ -14,6 +14,8 @@ const format = (data) => {
     mode: data.mode,
     zoom: data.zoom,
     categories: data.categories,
+    latitude: data.latitude,
+    longitude: data.longitude,
     // compact: data.compact,
     // basic: data.basic ? 'very' : undefined,
     // celled: data.celled,
@@ -23,10 +25,10 @@ const format = (data) => {
 };
 
 const OutdoorActiveView = ({ data }) => {
-  const { frontendtype, mode, zoom, categories } = format(data);
+  const { frontendtype, mode, zoom, categories, latitude, longitude } = format(data);
   const currentLang = useSelector((state) => state.intl.locale);
-  const scriptSrc = `//www.outdooractive.com/alpportal/oa_head.js?proj=${config.settings.outdooractive.projectId}&key=${config.settings.outdooractive.apiKey}&lang=${currentLang}`;
-  const center = [ 10.8867127, 44.6501718 ];
+  const js = `//www.outdooractive.com/alpportal/oa_head.js?proj=${config.settings.outdooractive.projectId}&key=${config.settings.outdooractive.apiKey}&lang=${currentLang}`;
+  const center = [ longitude || 10.8867, latitude || 44.6502 ];  // [ 10.8867127, 44.6501718 ];
   const [flexviewpage, setFlexviewpage] = useState(false);
   const [update, setUpdate] = useState(0);
 
@@ -42,15 +44,6 @@ const OutdoorActiveView = ({ data }) => {
       }
     }
   }, [update, data]); // frontendtype, zoom, center, categories, mode ]);
-
-  // categories
-  // http://www.outdooractive.com/api/project/api-dev-oa/category/tree?key=yourtest-outdoora-ctiveapi
-  // The project category tree reduced to categories of the core content types tour or poi:
-  // http://www.outdooractive.com/api/project/api-dev-oa/category/tree/tour?key=yourtest-outdoora-ctiveapi
-  // http://www.outdooractive.com/api/project/api-dev-oa/category/tree/poi?key=yourtest-outdoora-ctiveapi
-  // The project category tree filtered to categories which currently have published content objects:
-  // http://www.outdooractive.com/api/project/api-dev-oa/category/tree/tour/pruned?key=yourtest-outdoora-ctiveapi
-  // http://www.outdooractive.com/api/project/api-dev-oa/category/tree/poi/pruned?key=yourtest-outdoora-ctiveapi
 
   const loaded = () => {
     if(flexviewpage) {
@@ -89,7 +82,7 @@ const OutdoorActiveView = ({ data }) => {
       {mode}
       {categories.join(', ')} */}
       <PostScribe
-        html={`<script src="${scriptSrc}"></script>`}
+        html={`<script src="${js}"></script>`}
         autoFix={true}
         done={loaded} />
       <div className="oax-top-cont">

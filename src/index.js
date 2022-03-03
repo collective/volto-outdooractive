@@ -1,11 +1,10 @@
 import { OutdoorActiveEdit, OutdoorActiveView } from './OutdoorActive';
 import tableSVG from '@plone/volto/icons/table.svg';
+import CategoriesWidget from './OutdoorActive/CategoriesWidget';
 
 export default (config) => {
   config.settings.outdooractive = {
-    // projectId: 'api-visitmodena',
     projectId: process.env.RAZZLE_OUTDOOURACTIVE_PROJECT_ID ?? 'api-dev-oa',
-    // apiKey: 'IYTDPITW-EMWGM3CW-4OSSMDOT',
     apiKey: process.env.RAZZLE_OUTDOOURACTIVE_API_KEY ?? 'yourtest-outdoora-ctiveapi',
   };
   config.blocks.blocksConfig.outdoorActive = {
@@ -23,5 +22,6 @@ export default (config) => {
       view: [],
     },
   };
+  config.widgets.widget.oacategories = CategoriesWidget;
   return config;
 };
