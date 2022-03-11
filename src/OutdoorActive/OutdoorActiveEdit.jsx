@@ -5,11 +5,10 @@ import { SidebarPortal, Field, Icon } from '@plone/volto/components';
 // import tableSVG from '@plone/volto/icons/table.svg';
 import { InlineForm } from '@plone/volto/components';
 import { OutdoorActiveSchema } from './schema';
+import { DATABASE_INFORMATION } from '../../../../../omelette/src/constants/ActionTypes';
 // import config from '@plone/volto/registry';
 // oa's javascripts are full of document.write() calls, so we need to use postscribe
 // e.g. Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened.
-
-
 
 const OutdoorActiveEdit = (props) => {
   const { selected, onChangeBlock, block, data } = props;
@@ -34,10 +33,8 @@ const OutdoorActiveEdit = (props) => {
       </SidebarPortal>
 
       <div>
-        <h3>OutdoorActive</h3>
         <OutdoorActiveView {...props} />
       </div>
-
     </div>
   );
 };

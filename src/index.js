@@ -3,9 +3,10 @@ import tableSVG from '@plone/volto/icons/table.svg';
 import CategoriesWidget from './OutdoorActive/CategoriesWidget';
 
 export default (config) => {
-  config.settings.outdooractive = {
-    projectId: process.env.RAZZLE_OUTDOOURACTIVE_PROJECT_ID ?? 'api-dev-oa',
-    apiKey: process.env.RAZZLE_OUTDOOURACTIVE_API_KEY ?? 'yourtest-outdoora-ctiveapi',
+  config.settings['volto-outdooractive'] = {
+    projectId: process.env.RAZZLE_OUTDOORACTIVE_PROJECT_ID ?? 'api-dev-oa',
+    apiKey:
+      process.env.RAZZLE_OUTDOORACTIVE_API_KEY ?? 'yourtest-outdoora-ctiveapi',
   };
   config.blocks.blocksConfig.outdoorActive = {
     id: 'outdoorActive',
