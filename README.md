@@ -1,6 +1,6 @@
 # volto-outdooractive
 
-Volto addon for OutdoorActive integration
+Volto addon for OutdoorActive(https://www.outdooractive.com/) integration
 
 Install with mrs-developer (see [Volto docs](https://docs.voltocms.com/customizing/add-ons/)) or with:
 
@@ -8,5 +8,14 @@ Install with mrs-developer (see [Volto docs](https://docs.voltocms.com/customizi
 yarn add volto-outdooractive
 ```
 
+For Outdooractive documentation, check it out here:
+https://developers.outdooractive.com/
+
 ## Usage
 
+Add your Outdooractive Project ID and Api key to your env:
+
+```jsx
+RAZZLE_OUTDOORACTIVE_PROJECT_ID;
+RAZZLE_OUTDOORACTIVE_API_KEY;
+```
