@@ -1,5 +1,6 @@
 import { OutdoorActiveEdit, OutdoorActiveView } from './OutdoorActive';
 import tableSVG from '@plone/volto/icons/table.svg';
+import oaSVG from './icons/oa.svg';
 import CategoriesWidget from './OutdoorActive/CategoriesWidget';
 
 export default (config) => {
@@ -10,8 +11,8 @@ export default (config) => {
   };
   config.blocks.blocksConfig.outdoorActive = {
     id: 'outdoorActive',
-    title: 'outdoorActive',
-    icon: tableSVG,
+    title: 'Outdoor Active',
+    icon: oaSVG,
     group: 'common',
     view: OutdoorActiveView,
     edit: OutdoorActiveEdit,
