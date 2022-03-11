@@ -1,3 +1,10 @@
+### [1.0.5](https://github.com/collective/volto-outdooractive/compare/v1.0.4...v1.0.5) (2022-03-11)
+
+
+### Bug Fixes
+
+* fixed view ([f1acdb0](https://github.com/collective/volto-outdooractive/commit/f1acdb0f74d1eed0febb9be5821d13e10f038a1f))
+
 ### [1.0.4](https://github.com/collective/volto-outdooractive/compare/v1.0.3...v1.0.4) (2022-03-11)
 
 
