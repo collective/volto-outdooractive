@@ -12,7 +12,7 @@ const format = (data) => {
     frontendtype: data.frontendtype,
     mode: data.mode,
     zoom: data.zoom,
-    categories: data.categories?.length > 0 ? data.categories : null,
+    categories: data.categories,
     latitude: data.latitude,
     longitude: data.longitude,
     // compact: data.compact,
@@ -31,12 +31,14 @@ const OutdoorActiveView = ({ data }) => {
   const outdooractiveConfig = config.settings['volto-outdooractive'];
   const js = `//www.outdooractive.com/alpportal/oa_head.js?proj=${outdooractiveConfig.projectId}&key=${outdooractiveConfig.apiKey}&lang=${currentLang}`;
   const center = [longitude || 10.8867, latitude || 44.6502]; // [ 10.8867127, 44.6501718 ];
-  const [flexviewpage, setFlexviewpage] = useState(false);
-  const [update, setUpdate] = useState(0);
+  const [flexviewpage, setFlexviewpage] = useState(null);
 
   useEffect(() => {
+    updateFlexViewPage();
+  }, [data]); // frontendtype, zoom, center, categories, mode ]);
+
+  const updateFlexViewPage = () => {
     if (flexviewpage) {
-      // flexviewpage.destroy();
       // flexviewpage.type=frontendtype;
       flexviewpage.setZoom(zoom);
       flexviewpage.setWhat(categories);
@@ -44,19 +46,14 @@ const OutdoorActiveView = ({ data }) => {
         flexviewpage.flexOpener.setFvView(flexviewpage, mode);
       }
     }
-  }, [update, data]); // frontendtype, zoom, center, categories, mode ]);
+  };
 
   const loaded = () => {
     if (flexviewpage) {
-      // flexviewpage.type=frontendtype;
-      flexviewpage.setZoom(zoom);
-      flexviewpage.setWhat(categories);
-      if (flexviewpage.flexOpener) {
-        flexviewpage.flexOpener.setFvView(flexviewpage, mode);
-      }
+      updateFlexViewPage();
     } else {
       const fvp = oa.api.flexviewpage({
-        frontendtype: frontendtype,
+        frontendtype: frontendtype ?? 'tour',
         zoom: zoom,
         center: center,
         initMode: mode,
@@ -66,9 +63,12 @@ const OutdoorActiveView = ({ data }) => {
           },
         },
       });
+
       fvp.whenLoaded(() => {
-        setUpdate(update + 1);
+        console.log('whenLoaded', fvp);
+        updateFlexViewPage();
       });
+
       setFlexviewpage(fvp);
     }
   };
