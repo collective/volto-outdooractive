@@ -38,4 +38,4 @@ const OutdoorActiveEdit = (props) => {
   );
 };
 
-cexport default OutdoorActiveEdit;
+export default OutdoorActiveEdit;
