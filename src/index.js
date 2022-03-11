@@ -1,5 +1,5 @@
 import { OutdoorActiveEdit, OutdoorActiveView } from './OutdoorActive';
-import tableSVG from '@plone/volto/icons/table.svg';
+
 import oaSVG from './icons/oa.svg';
 import CategoriesWidget from './OutdoorActive/CategoriesWidget';
 
