@@ -1,7 +1,9 @@
 {
   "name": "volto-outdooractive",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "volto-outdooractive: Volto add-on",
+  "repository": "https://github.com/collective/volto-outdooractive",
+  "author": "Giulia Ghisini, Mauro Amico",
   "main": "src/index.js",
   "license": "MIT",
   "keywords": [
