@@ -2,7 +2,7 @@
 
 Volto addon for OutdoorActive (https://www.outdooractive.com/) integration
 
-Install with mrs-developer (see [Volto docs](https://docs.voltocms.com/customizing/add-ons/)) or with:
+Install with mrs-developer (see [Volto docs](https://docs.voltocms.com/addons/#use-mrs-developer-to-manage-the-development-cycle)) or with:
 
 ```bash
 yarn add volto-outdooractive
