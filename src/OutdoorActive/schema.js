@@ -25,30 +25,6 @@ const messages = defineMessages({
     id: 'categories',
     defaultMessage: 'Categories',
   },
-  //   fixed: {
-  //     id: 'Fixed width table cells',
-  //     defaultMessage: 'Fixed width table cells',
-  //   },
-  //   compact: {
-  //     id: 'Make the table compact',
-  //     defaultMessage: 'Make the table compact',
-  //   },
-  //   basic: {
-  //     id: 'Reduce complexity',
-  //     defaultMessage: 'Reduce complexity',
-  //   },
-  //   celled: {
-  //     id: 'Divide each row into separate cells',
-  //     defaultMessage: 'Divide each row into separate cells',
-  //   },
-  //   inverted: {
-  //     id: 'Table color inverted',
-  //     defaultMessage: 'Table color inverted',
-  //   },
-  //   striped: {
-  //     id: 'Stripe alternate rows with color',
-  //     defaultMessage: 'Stripe alternate rows with color',
-  //   },
   mapFieldset: {
     id: 'Map',
     defaultMessage: 'Map',
@@ -57,10 +33,6 @@ const messages = defineMessages({
     id: 'Default',
     defaultMessage: 'Default',
   },
-  //   dataFile: {
-  //     id: 'Data file',
-  //     defaultMessage: 'Data file',
-  //   },
 });
 
 export const OutdoorActiveSchema = ({ intl }) => ({
@@ -133,31 +105,6 @@ export const OutdoorActiveSchema = ({ intl }) => ({
       // choices: getCategories,
       title: intl.formatMessage(messages.categories),
     },
-
-    // fixed: {
-    //   type: 'boolean',
-    //   title: intl.formatMessage(messages.fixed),
-    // },
-    // compact: {
-    //   type: 'boolean',
-    //   title: intl.formatMessage(messages.compact),
-    // },
-    // basic: {
-    //   type: 'boolean',
-    //   title: intl.formatMessage(messages.basic),
-    // },
-    // celled: {
-    //   type: 'boolean',
-    //   title: intl.formatMessage(messages.celled),
-    // },
-    // inverted: {
-    //   type: 'boolean',
-    //   title: intl.formatMessage(messages.inverted),
-    // },
-    // striped: {
-    //   type: 'boolean',
-    //   title: intl.formatMessage(messages.striped),
-    // },
   },
 
   required: [],
