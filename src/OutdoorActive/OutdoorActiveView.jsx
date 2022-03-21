@@ -15,11 +15,6 @@ const format = (data) => {
     categories: data.categories,
     latitude: data.latitude,
     longitude: data.longitude,
-    // compact: data.compact,
-    // basic: data.basic ? 'very' : undefined,
-    // celled: data.celled,
-    // inverted: data.inverted,
-    // striped: data.striped
   };
 };
 
@@ -75,10 +70,6 @@ const OutdoorActiveView = ({ data }) => {
 
   return (
     <div className="block outdooractive">
-      {/* {frontendtype}
-      {zoom}
-      {mode}
-      {categories.join(', ')} */}
       <PostScribe
         html={`<script src="${js}"></script>`}
         autoFix={true}
@@ -90,12 +81,5 @@ const OutdoorActiveView = ({ data }) => {
     </div>
   );
 };
-
-// TODO: move defaults in settings
-// OutdoorActiveView.defaultProps = {
-//   frontendtype: 'tour',        // choose content type
-//   zoom: 11,                    // set initial zoom level
-//   center: [ 10.8867127, 44.6501718 ],  // set initial map center
-// };
 
 export default OutdoorActiveView;
