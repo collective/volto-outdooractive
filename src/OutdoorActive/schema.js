@@ -82,6 +82,7 @@ export const OutdoorActiveSchema = ({ intl }) => ({
       type: 'boolean',
       default: true,
       title: intl.formatMessage(messages.fitDataBounds),
+    },
     zoom: {
       type: 'integer',
       title: intl.formatMessage(messages.zoom),
