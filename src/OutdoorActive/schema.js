@@ -9,6 +9,10 @@ const messages = defineMessages({
     id: 'mode',
     defaultMessage: 'Mode',
   },
+  fitDataBounds: {
+    id: 'fitDataBounds',
+    defaultMessage: 'fit data bounds (ignore zoom property)',
+  },
   zoom: {
     id: 'zoom',
     defaultMessage: 'Zoom',
@@ -74,7 +78,10 @@ export const OutdoorActiveSchema = ({ intl }) => ({
       default: 'gallery',
       title: intl.formatMessage(messages.mode),
     },
-    fitDataBounds: true,
+    fitDataBounds: {
+      type: 'boolean',
+      default: true,
+      title: intl.formatMessage(messages.fitDataBounds),
     zoom: {
       type: 'integer',
       title: intl.formatMessage(messages.zoom),
