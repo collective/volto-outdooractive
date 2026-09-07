@@ -1,3 +1,21 @@
+## [1.1.0](https://github.com/collective/volto-outdooractive/compare/v1.0.5...v1.1.0) (2026-09-07)
+
+
+### Features
+
+* fitDataBounds ([b0ef092](https://github.com/collective/volto-outdooractive/commit/b0ef092e29fc4061ced5cde52c69bfbfe9143f0c))
+
+
+### Bug Fixes
+
+* delegate CategoriesWidget to the core ArrayWidget for Volto >= 17 ([b7e1d3b](https://github.com/collective/volto-outdooractive/commit/b7e1d3bfba060433a6e75b505b5d14f717272e40))
+* fixed boundary map with fitDataBounds parameter ([@sarabianchi](https://github.com/sarabianchi)) ([831aa25](https://github.com/collective/volto-outdooractive/commit/831aa25255ad3a7c344b355cd2ed80eca15816ef))
+
+
+### Maintenance
+
+* npm lock remove ([ea75fd3](https://github.com/collective/volto-outdooractive/commit/ea75fd340acc2e6c6419703862f6bb06c038bf62))
+
 ### [1.0.5](https://github.com/collective/volto-outdooractive/compare/v1.0.4...v1.0.5) (2022-03-11)
 
 
